@@ -1,0 +1,6 @@
+{
+  "name": "سیستم گزارش‌نویسی",
+  "description": "سیستم مدرن و مینیمال ثبت، مدیریت و تحلیل گزارش‌های روزانه و کاری با پشتیبانی از SQLite و Prisma",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

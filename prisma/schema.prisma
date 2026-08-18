@@ -1,0 +1,29 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Report {
+  id          Int      @id @default(autoincrement())
+  title       String
+  author      String   @default("کاربر سیستم")
+  category    String   @default("روزانه") // روزانه, پروژه, فنی, جلسه, هفتگی, سایر
+  priority    String   @default("MEDIUM") // LOW, MEDIUM, HIGH, URGENT
+  status      String   @default("SUBMITTED") // DRAFT, SUBMITTED, APPROVED, ARCHIVED
+  reportDate  String   // تاریخ گزارش (مثلا 1403/05/28 یا YYYY-MM-DD)
+  hoursSpent  Float    @default(0)
+  summary     String
+  content     String
+  blockers    String?
+  nextSteps   String?
+  tags        String   @default("") // تگ‌های کاما جدا شده
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
